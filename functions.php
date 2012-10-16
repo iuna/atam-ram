@@ -24,6 +24,24 @@ sidebars, comments, ect.
 	- adding custom fields to user profiles
 */
 require_once('library/bones.php'); // if you remove this, bones will break
+require_once('library/xml2array.php'); // levantar plugin
+
+
+/*********
+
+/*
+ *  libreria de funciones recurrentes
+ */
+require_once('lib-lifo/lifo_build-customs-post-taxos-pages.php'); // para crear custom post, taxos y paginas.
+require_once('lib-lifo/lifo_wp-modificaciones.php'); // para crear custom post, taxos y paginas.
+
+/*
+ * funciones particulares a este tema
+ */
+require_once('lib-RAM/RAM_customs-post&taxos.php'); // para crear custom post, taxos y paginas.
+
+
+
 /*
 2. library/custom-post-type.php
     - an example custom post type
@@ -38,18 +56,21 @@ require_once('library/bones.php'); // if you remove this, bones will break
     - adding custom login css
     - changing text in footer of admin
 */
-// require_once('library/admin.php'); // this comes turned off by default
+ require_once('library/admin.php'); // this comes turned off by default
 /*
 4. library/translation/translation.php
     - adding support for other languages
 */
-// require_once('library/translation/translation.php'); // this comes turned off by default
+ require_once('library/translation/translation.php'); // this comes turned off by default
 
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
 add_image_size( 'bones-thumb-600', 600, 150, true );
 add_image_size( 'bones-thumb-300', 300, 100, true );
+
+
+add_image_size( 'atam-large-1024', 1024, 1024, false );
 /* 
 to add more sizes, simply copy a line from above 
 and change the dimensions & name. As long as you
